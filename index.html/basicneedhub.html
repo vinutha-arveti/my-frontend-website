@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Needs Hub</title>
+</head>
+<body>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #c3a58d;
+        padding: 10px;
+    }
+    .logo img {
+        height: 50px;
+        margin-left: 0.3cm;
+    }
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+    nav ul li {
+        margin-right: 20px;
+    }
+    nav ul li a {
+        text-decoration: none;
+        color: #333;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    nav ul li a:hover {
+        color: #007BFF;
+    }
+    .main-content {
+        display: flex;
+        align-items: right;
+        height: 200px;
+        text-align: right;
+        flex-direction: column;
+        margin-top: 3cm;
+    }
+    .welcome-message h1 {
+      font-size: 33px;
+        color: #333;
+    }
+    .welcome-message .tagline {
+        font-size: 14px;
+        color: #777;
+        margin-top: 5px;
+    }
+    img{
+        float: left;
+    }
+    p{
+        font-style: italic;
+    }
+    .buttons {
+        margin-top: 20px;
+        margin-right: 3.5cm;
+    }
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: #ffffff;
+        border: 2px solid #b9bcbf;
+        border-radius: 30px;
+        text-decoration: none;
+        background-color:rgb(171, 141, 122);
+        margin-right: 10px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    .btn:hover {
+        background-color: #796876;
+        color: #ab9f9f;
+    }
+    .vision-mission-section {
+        display: flex;
+        justify-content: center;
+        gap: 40px; 
+        margin-top:5.9cm;
+    }
+    .circle {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        background-color: #141515;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    }
+    .circle h2 {
+        font-size: 20px;
+        color: goldenrod;
+        margin-top: 16px;
+    }
+    .circle p {
+        font-size: 14px;
+        color:goldenrod;
+    } 
+    footer{
+        margin-top: 5cm;
+        text-align: center;
+    }
+    #how-we-work {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 50px;
+      background-color:rgb(233, 224, 199);
+      gap: 20px;
+      float: left;
+    }
+    #how-we-work .left {
+      flex: 1;
+      max-width: 50%;
+      float: right;
+    }
+    #how-we-work .left img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    #how-we-work .right {
+      flex: 1;
+      max-width: 50%;
+      padding: 20px;
+    }
+    #how-we-work .right h2 {
+      font-size: 2.2em;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    #how-we-work .right p {
+      font-size: 1.0em;
+      margin-bottom: 15px;
+      color: #555;
+    }
+    #how-we-work .right p strong {
+      font-weight: bold;
+    }
+    #why-donate {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 16.8cm;
+      padding: 50px 0;
+      background-color: #1f4853;
+      text-align: center;
+    }
+    .box {
+      flex: 1;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+    .box h3 {
+      font-size: 1.8em;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .box p {
+      font-size: 1.1em;
+      color: #555;
+    }
+    .donation-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Donation Box Styling */
+.donation-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+.food-donation, .other-donation {
+    flex-direction: row;
+}
+.clothes-donation {
+    flex-direction: row-reverse;
+}
+.donation-box img {
+    width: 40%;
+    border-radius: 8px;
+    margin: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.donation-content {
+    width: 60%;
+    padding: 20px;
+    text-align: left;
+}
+.donation-content h2 {
+    font-size: 28px;
+    color: #444;
+    margin-bottom: 15px;
+}
+.donation-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #555;
+}
+.donation-content h3 {
+    font-size: 20px;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.donation-content ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    color: #333;
+}
+.donation-content li {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+.join-us-section {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.join-us-section h2 {
+    font-size: 28px;
+    color: #444;
+    margin-bottom: 20px;
+}
+.join-us-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+.join-us-form label {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 5px;
+}
+.join-us-form input,
+.join-us-form select,
+.join-us-form textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+}
+.submit-button {
+    padding: 12px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.submit-button:hover {
+    background-color: #45a049;
+}
+.confirmation-message {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #4CAF50;
+}
+.join-us-button-container {
+    text-align: center;
+    margin-top: 30px;
+}
+.join-us-button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #4CAF50;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.join-us-button:hover {
+    background-color: #45a049;
+}
+.contact-us-section {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.contact-us-section h2 {
+    font-size: 28px;
+    color: #444;
+    margin-bottom: 20px;
+}
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+    font-size: 16px;
+    color: #555;
+}
+.icon {
+    width: 24px;
+    height: 24px;
+}
+.send-message-button {
+    padding: 12px 24px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 20px 0;
+}
+.send-message-button:hover {
+    background-color: #45a049;
+}
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+.social-media a img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.2s ease;
+}
+
+.social-media a img:hover {
+    transform: scale(1.1);
+}
+    </style>
+   
+    <header>
+        <div class="logo">
+            <img src="images/image.png" alt="Basic Needs Hub Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#aboutus">About Us</a></li>
+                <li><a href="#howwework">How We Work</a></li>
+                <li><a href="#ourbanks">Our Banks</a></li>
+                <li><a href="#donations">Money Donation</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#join us">FAQs</a></li>
+            </ul>
+        </nav>
+    </header>
+    <img src="backgroundbasic.png" alt="image">
+    <section class="main-content">
+        <div class="welcome-message">
+            <h1 style=" margin-right: 0.5cm;">Welcome to Basic Needs Hub</h1>
+            <p style="margin-right: 3.5cm;">Harvesting kindness. Serving meals!</p>
+            <div class="buttons">
+                <a href="#donate" class="btn">Donate Now</a>
+                <a href="#joinus" class="btn">Join Us</a>
+            </div>
+        </div>
+    </section>
+    <section class="vision-mission-section">
+        <div class="circle">
+            <h2>Our Vision</h2>
+            <p>To create a hunger-free world by distributing meals and essential resources to those in need.</p>
+        </div>
+    
+        <div class="circle">
+            <h2>Our Mission</h2>
+            <p>To provide sustainable food support and empower communities through kindness, collaboration, and service.</p>
+        </div>
+    </section>
+    <section id="how-we-work">
+        <div class="left">
+          <img src="how we work.jpeg" alt="How We Work">
+        </div>
+        <div class="right">
+          <h2>Share Surplus Food and Clothes Today to Help Those in Need</h2>
+          <p>Welcome to Basic Needs Hut, where compassion meets action.</p>
+          <p>At Basic Needs Hub, we are committed to combating hunger by creating a bridge between those with surplus food and those in need.</p>
+          <p>Inspired by the principle of "Harvesting Kindness, Serving Meals", our mission is to ensure that no one in our community goes hungry.</p>
+          <p>Providing clothes to needy people not only meets their basic needs but also restores their dignity and self-confidence. It's a simple act of kindness that can have a profound impact on their lives.</p>
+          <p><strong>"BasicNeedsHub"</strong> is a community-focused initiative dedicated to collecting and distributing essential items, such as food and clothing, to individuals and families in need. By serving as a centralized hub for donations, it aims to ensure that everyone has access to basic necessities, fostering a more supportive and compassionate society.</p>
+        </div>
+      </section>
+      <section id="why-donate">
+        <div class="box">
+          <h3>01 Humanitarian Relief</h3>
+          <p>Donating food and clothes ensures that basic needs are met, offering immediate support to those struggling to afford necessities.</p>
+        </div>
+        <div class="box">
+          <h3>02 Reducing Inequality</h3>
+          <p>Contributions help bridge the gap between the affluent and the impoverished, promoting a more equitable society where everyone has access to essentials.</p>
+        </div>
+        <div class="box">
+          <h3>03 Community Health</h3>
+          <p>Providing proper nutrition and clothing can improve the overall health and well-being of the poor, reducing the strain on public health systems.</p>
+        </div>
+      </section>
+      <section class="donation-section">
+        <!-- Food Donations Section -->
+        <div class="donation-box food-donation">
+            <img src="images/fooddonation.jpeg" alt="Food Donation Image">
+            <div class="donation-content">
+                <h2>Food Donations</h2>
+                <p><strong>Purpose:</strong> Food donations are essential for alleviating hunger and providing nutritious meals to those in need. They support individuals and families facing food insecurity, helping them maintain their health and well-being.</p>
+                <h3>How It Works:</h3>
+                <ul>
+                    <li><strong>Collection:</strong> We offer multiple ways to donate, including local food drives, drop-off locations, and online monetary contributions that go toward purchasing food at bulk discounts.</li>
+                    <li><strong>Sorting:</strong> Donated food items undergo a quality check and are sorted by type (canned goods, fresh produce, grains, etc.) to ensure they are safe and nutritious.</li>
+                    <li><strong>Distribution:</strong> We partner with food banks, shelters, and community kitchens to distribute food where it's most needed, ensuring that donations reach vulnerable populations efficiently and responsibly.</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Clothes Donations Section -->
+        <div class="donation-box clothes-donation">
+            <div class="donation-content">
+                <h2>Clothes Donations</h2>
+                <p><strong>Purpose:</strong> Clothes provide protection from environmental elements, ensuring comfort and safety. They also play a key role in expressing personal identity and cultural heritage. Additionally, clothing helps in maintaining hygiene and social norms.</p>
+                <h3>How It Works:</h3>
+                <ul>
+                    <li><strong>Collection:</strong> Convenient drop-off locations and home pick-up services.</li>
+                    <li><strong>Sorting:</strong> Quality inspection, cleaning, and categorization by type and size.</li>
+                    <li><strong>Distribution:</strong> Collaborate with community centers and direct assistance programs.</li>
+                </ul>
+            </div>
+            <img src="images/clothesdonation.jpeg" alt="Clothes Donation Image">
+        </div>
+        <!-- Other Donations Section -->
+        <div class="donation-box other-donation">
+            <img src="images/otherdonations.jpg" alt="Other Donation Image">
+            <div class="donation-content">
+                <h2>Other Donations</h2>
+                <p><strong>Purpose:</strong> Besides food and clothing, we accept items like toiletries, household goods, and school supplies, which are helpful to those in need.</p>
+                <h3>How It Works:</h3>
+                <ul>
+                    <li><strong>Collection:</strong> Accept items like toiletries, household goods, and school supplies.</li>
+                    <li><strong>Sorting:</strong> Inspect and organize based on type and usability.</li>
+                    <li><strong>Utilization:</strong> Distribute through our network to support various community needs.</li>
+                    <li><strong>Transparency:</strong> Regular updates and reports on how your donations are used.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- Join Us Section -->
+    <section class="join-us-section" id="join-us">
+      <h2>Join Us</h2>
+      <form class="join-us-form" action="#" method="post">
+          <div class="form-group">
+              <label for="fullname">Full Name:</label>
+              <input type="text" id="fullname" name="fullname" required>
+          </div>
+          <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+              <label for="phone">Phone Number:</label>
+              <input type="tel" id="phone" name="phone" required>
+          </div>
+          <div class="form-group">
+              <label for="employment-type">Employment Type:</label>
+              <select id="employment-type" name="employment-type" required>
+                  <option value="">Select...</option>
+                  <option value="parttime">Part-time</option>
+                  <option value="fulltime">Full-time</option>
+              </select>
+          </div>
+          <div class="form-group">
+              <label for="skills">Skills:</label>
+              <input type="text" id="skills" name="skills" required>
+          </div>
+          <div class="form-group">
+              <label for="message">Message:</label>
+              <textarea id="message" name="message" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="submit-button">Submit</button>
+      </form>
+      <p class="confirmation-message">Your request was sent. We will call back or send an email to confirm your request. Thank you!</p>
+  </section>
+  <div class="join-us-button-container">
+      <a href="#join-us" class="join-us-button">Join Us</a>
+  </div>
+  <!-- Contact Us Section -->
+  <section class="contact-us-section">
+    <h2>Contact Us</h2>
+    <div class="contact-item">
+        <img src="images/location.logo.jpg" alt="Location Icon" class="icon">
+        <p>Nandyal</p>
+    </div>
+    <div class="contact-item">
+        <img src="images/time.logo.jpg" alt="clock" class="icon">
+        <p>Open: Mon - sat, 9:00 AM - 6:00 PM</p>
+    </div>
+    <div class="contact-item">
+        <img src="images/email.logo.jpg" alt="Email Icon" class="icon">
+        <p>BasicNeedsHub@donate.com</p>
+    </div>
+    <button class="send-message-button">Send Message</button>
+    <div class="social-media">
+        <a href="https://twitter.com" target="_blank"><img src="images/twitter logo.png" alt="Twitter"></a>
+        <a href="https://facebook.com" target="_blank"><img src="images/Facebook_logo_(square).png" alt="Facebook"></a>
+        <a href="https://instagram.com" target="_blank"><img src="images/instagram.jpg" alt="Instagram"></a>
+        <a href="https://linkedin.com" target="_blank"><img src="images/linkedin-logo.jpg" alt="LinkedIn"></a>
+    </div>
+</section>
+    <footer>
+        <p>&copy; 2024 Basic Needs Hub. All rights reserved.</p>
+        <p>Website designed by  <em style="color: maroon;">Vinutha Arveti</em>.</p>
+    </footer>
+
+</body>
+</html>
