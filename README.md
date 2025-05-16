@@ -1,3 +1,9 @@
+# Basic Needs Hub
+
+## 📷 Homepage Screenshot
+
+![Homepage](homepage.jpeg)
+
 # 🛍️ Basic Needs Hub
 
 **Basic Needs Hub** is a web platform that connects donors with those in need. It enables users to donate **money** and **food**, and also supports **pet care and adoption**. This initiative aims to reduce hunger and promote pet welfare in local communities.
