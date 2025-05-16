@@ -30,4 +30,3 @@ To run this project locally:
 git clone https://github.com/your-username/basic-needs-hub.git
 cd basic-needs-hub
 open index.html  # or run with Live Server if using VSCode
------
